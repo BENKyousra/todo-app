@@ -5,20 +5,17 @@ import Filters from "./components/Filters";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const [filter, setFilter] = useState("all"); // all, active, completed
+  const [filter, setFilter] = useState("all");
 
-  // Charger les tâches depuis localStorage
   useEffect(() => {
     const saved = localStorage.getItem("tasks");
     if (saved) setTasks(JSON.parse(saved));
   }, []);
 
-  // Sauvegarder les tâches dans localStorage
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  // Ajouter une tâche
   const addTask = (text) => {
     if (!text.trim()) return;
     setTasks([
@@ -27,17 +24,14 @@ function App() {
     ]);
   };
 
-  // Supprimer une tâche
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
-  // Supprime toutes les tâches
   const deleteAllTasks = () => {
-    setTasks([]); // vide la liste
-    localStorage.removeItem("tasks"); // vide aussi le localStorage
+    setTasks([]); 
+    localStorage.removeItem("tasks");
   };
 
-  // Basculer l'état terminé
   const toggleTask = (id) => {
     setTasks(
       tasks.map((task) =>
@@ -46,7 +40,6 @@ function App() {
     );
   };
 
-  // Filtrer les tâches
   const filteredTasks = tasks.filter((task) => {
     if (filter === "active") return !task.completed;
     if (filter === "completed") return task.completed;
