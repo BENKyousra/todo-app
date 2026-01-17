@@ -1,0 +1,116 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #000000, #4e4e4e, #000000);
+  color: #333;
+}
+
+.app {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  color: white;
+  background: linear-gradient(to right, #2a2929, #3000bf,#3000bf, #222222);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(167, 167, 167, 0.2);
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input[type="text"]:focus {
+  border-color:#7a37c3;
+  outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  background: linear-gradient(to right, #7a37c3, #3000bf);
+  
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(to right,#0039bf,#4ebbd1);
+}
+
+.filters {
+  margin: 10px 0 15px 0;
+}
+
+.filters button {
+  margin: 0 5px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+li button {
+  background: #676767;
+  padding: 6px 10px;
+}
+
+li button:hover {
+  background: #ff0033;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.filters button {
+  opacity: 0.6;
+}
+
+.filters button.active {
+  opacity: 1;
+  background-color: #6a11cb;
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+.delete-all-container {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.delete-all-btn {
+  padding: 8px 15px;
+  background: linear-gradient(to right, #373737, #000000, #000000);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.delete-all-btn:hover {
+  background: linear-gradient(to right, #ff002b, #e70013);
+  transform: scale(1.05);
+}
+
